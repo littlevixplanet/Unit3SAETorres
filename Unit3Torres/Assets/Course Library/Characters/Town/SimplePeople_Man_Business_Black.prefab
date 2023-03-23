@@ -12,6 +12,7 @@ GameObject:
   - component: {fileID: 9500000}
   - component: {fileID: 47402065136698470}
   - component: {fileID: 50583004872648772}
+  - component: {fileID: 7963795670659781698}
   m_Layer: 0
   m_Name: SimplePeople_Man_Business_Black
   m_TagString: Untagged
@@ -78,8 +79,8 @@ BoxCollider:
   m_IsTrigger: 0
   m_Enabled: 1
   serializedVersion: 2
-  m_Size: {x: 1, y: 3.3008647, z: 0.71173674}
-  m_Center: {x: 3.2076952e-17, y: 1.1504323, z: 0.010069713}
+  m_Size: {x: 1, y: 2.8208492, z: 0.71173674}
+  m_Center: {x: 3.2077164e-17, y: 1.3904401, z: 0.010069728}
 --- !u!54 &50583004872648772
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -94,8 +95,24 @@ Rigidbody:
   m_UseGravity: 1
   m_IsKinematic: 0
   m_Interpolate: 0
-  m_Constraints: 0
+  m_Constraints: 122
   m_CollisionDetection: 0
+--- !u!114 &7963795670659781698
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 100000}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 60fc2b08337036f41bcab5353e9bdacb, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  jumpForce: 10
+  gravityModifier: 1.5
+  isOnGround: 1
+  gameOver: 0
 --- !u!1 &100004
 GameObject:
   m_ObjectHideFlags: 0

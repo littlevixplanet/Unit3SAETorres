@@ -2,27 +2,26 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class MoveLeft : MonoBehaviour
+public class StreetSpawner : MonoBehaviour
 {
-    public float speed = 30;
+    public GameObject StreetPrefab;
+    private Vector3 spawnPos = new Vector3(0, 0, 0);
+    private float startDelay = .6f;
+    private float repeatRate = .6f;
     private PlayerController playerControllerScript;
-    private float leftBound = -30;
     // Start is called before the first frame update
     void Start()
     {
+        InvokeRepeating("SpawnStreet", startDelay, repeatRate);
         playerControllerScript = GameObject.Find("Player").GetComponent<PlayerController>();
     }
 
     // Update is called once per frame
-    void Update()
+    void SpawnStreet()
     {
         if (playerControllerScript.gameOver == false)
         {
-            transform.Translate(Vector3.left * Time.deltaTime * speed);
-        }
-        if (transform.position.x < leftBound && gameObject.CompareTag("Obstacle"))
-        {
-            Destroy(gameObject);
+            Instantiate(StreetPrefab, spawnPos, StreetPrefab.transform.rotation);
         }
     }
 }
